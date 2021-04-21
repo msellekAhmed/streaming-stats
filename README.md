@@ -51,16 +51,14 @@ Vous devez disposer:
 #### Etape n°1: cloner l'application ####
 Clonez l'application à l'aide de la commande suivante:
 
-	https://github.com/msellekAhmed/streaming-stats.git
+	git clone https://github.com/msellekAhmed/streaming-stats.git
 
-#### Etape n°2: construire l'application ####
-Entrez dans le répertoire de l'application:
+#### Etape n°2: Modifier l'url du serveur postgres por pointer sur votre adresse ip####
+Modifier le application properties pour mettre l'adresse ip de votre machine au niveau de l'URL de postgres:
 
+	src/main/resources/application.properties
+	
 #### Etape n°3: Modifier l'url du serveur postgres por pointer sur votre adresse ip ####
-Entrez dans le répertoire de l'application:
-
-	cd src/main/resources/application.properties
-
 Puis, lancez la construction de l'application via:
 
 	mvn clean install

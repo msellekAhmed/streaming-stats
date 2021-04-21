@@ -55,7 +55,7 @@ Clonez l'application à l'aide de la commande suivante:
 
 	git clone https://github.com/msellekAhmed/streaming-stats.git
 
-#### Etape n°2: Modifier l'url du serveur postgres por pointer sur votre adresse ip####
+#### Etape n°2: Modifier l'url du serveur postgres pour pointer sur votre adresse ip ####
 Modifier le application properties pour mettre l'adresse ip de votre machine au niveau de l'URL de postgres:
 
 	cd streaming-stats/

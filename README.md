@@ -29,7 +29,7 @@ Puller la derniere version de l'image Postgres depuis Docker pour éviter de l'i
 #### Etape n°2: démmarrer postgres ####
 Lancer le server postgres
 ```
-sudo docker run --name server-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres  
+docker run --name server-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres  
 ```
 #### Etape n°3: télécharger l'application stats-1.0.0.jar####
 
@@ -69,7 +69,7 @@ Lancez la construction de l'application via:
 	
 Puis, Builder l'image Docker de notre application
  
- 	sudo docker build --tag=stats:latest .
+ 	docker build --tag=stats:latest .
  
 
 #### Etape n°3: lancer l'application Avec Docker compose ####

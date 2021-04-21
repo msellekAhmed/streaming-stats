@@ -70,39 +70,32 @@ Puis, Builder l'image Docker de notre application
  	sudo docker build --tag=stats:latest .
  
 
-#### Etape n°3: lancer l'application ####
-Une fois la construction terminée, rendez-vous dans le dossier `target` du module `lawn-mower-core`:
+#### Etape n°3: lancer l'application Avec Docker compose ####
+Ici on va utiliser Dokcer compose afin de lancer multiple container docker, notamment un pour l'application stats et un autre por la postgres. La configuration necessaire a ceci est definis dans les fichier Dockerfile et docker-compose.yml du projet  :
 
-	cd data-cli/target/
+	docker-compose up
 
-Vous pouvez y trouver le JAR `lawn-mower-cli-1.0-SNAPSHOT-jar-with-dependencies.jar`que vous pouvez lancer avec la commande suivante:
 
-	java -jar data-cli-1.0.0-jar-with-dependencies.jar <chemin vers le fichier de specification des mower>
-
----
-## Guide d'utilisation ##
-L'usage de l'application est le suivant:
-
-	Usage: data-cli <file>
-
-  		<file>
-        	source file path
-
-Un seul argument est attendu en entrée; ce dernier doit être un fichier existant. Cet usage vous est affiché pour rappel en cas d'erreur. Le libellé `lawn-mower-core`est bien évidemment à remplacer par le nom du JAR.
-
----
 ## Notes techniques ##
 ### Technologies utilisées ###
 
 * Maven;
-* Scala;
-* [Scopt](https://github.com/scopt/scopt) pour la CLI.
+* java;
+* Docker
+* Postgres
+* Spring-boot 2.4
+* Spring Data JPA
+* Spring REST
 
 ### Architecture ###
-L'application est découpée en modules selon la correspondance suivante:
+L'application est découpée en couche selon la correspondance suivante:
 
-Module            | Description
-------------------|------
-data-core         | la logique "pure" de l'application; Calcul des differentes moyennes.
-data-parsing      | contient la logique de *parsing* des fichiers sources et le model et 
-data-cli          | contient l'interface de ligne de commande et la main class permettant de faire usage de l'application.
+Couche                          | Description
+--------------------------------|---------------------------------------------------
+packages entity et repository   | la couche de persistence et d'accees a la donnee.
+package service                 | contient la logique metier de l'application en terme d'aggreagation et calcul 
+package controller              | contient la couche d'exposition du web service REST.
+
+
+### Tests ###
+un ensemble de tests unitaires a ete fait pour assurer le bon fonctionnement et la logiqe de l'application

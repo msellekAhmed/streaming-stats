@@ -31,7 +31,7 @@ Lancer le server postgres
 ```
 docker run --name server-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres  
 ```
-#### Etape n°3: télécharger l'application stats-1.0.0.jar####
+#### Etape n°3: télécharger l'application stats-1.0.0.jar ####
 
 Cf Piece jointe du mail
 

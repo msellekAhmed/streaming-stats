@@ -22,19 +22,21 @@ Deux possibilités s'offrent à vous:
 * Vous devez disposer d'un maven en version 3 ou supérieure.
 
 #### Etape n°1: télécharger l'application ####
-Puller la derniere version de l'image Postgres depuis Docker pour eviter de l'installer
+Puller la derniere version de l'image Postgres depuis Docker pour éviter de l'installer
   ```
   docker pull postgres
   ```
 #### Etape n°2: démmarrer postgres ####
-Puller la derniere version de l'image Postgres depuis Docker pour eviter de l'installer
-  ```
+Lancer le server postgres
+```
 sudo docker run --name server-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres  
 ```
 #### Etape n°3: télécharger l'application stats-1.0.0.jar####
+
 Cf Piece jointe du mail
+
 #### Etape n°2: lancer l'application ####
-Placez-vous dans le dossier où se trouve le JAR téléchargé (`lawnmower-core-1.0-jar-with-dependencies.jar`) que vous pouvez lancer avec la commande suivante:
+Placez-vous dans le dossier où se trouve le JAR téléchargé (`stats-1.0.0.jar`) que vous pouvez lancer avec la commande suivante:
   ```
   java -jar stats-1.0.0.jar
   ```

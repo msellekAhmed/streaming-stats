@@ -2,7 +2,7 @@
 
 ## Préambule ##
 
-Le projet Streaming Stats, contenu dans ce *repository*, constitue ma réponse a la 2eme question du test technique que je me suis vu proposé.
+Le projet Streaming Stats. 
 
 La version actuelle est la `1.0.0`.
 

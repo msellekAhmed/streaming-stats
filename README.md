@@ -56,12 +56,19 @@ Clonez l'application à l'aide de la commande suivante:
 #### Etape n°2: Modifier l'url du serveur postgres por pointer sur votre adresse ip####
 Modifier le application properties pour mettre l'adresse ip de votre machine au niveau de l'URL de postgres:
 
-	src/main/resources/application.properties
+	cd streaming-stats/
+
+	vim src/main/resources/application.properties
 	
-#### Etape n°3: Modifier l'url du serveur postgres por pointer sur votre adresse ip ####
-Puis, lancez la construction de l'application via:
+#### Etape n°3: Builder l'image Docker du Server pour etre sure de lancer a chanque fois la derniere version ####
+Lancez la construction de l'application via:
 
 	mvn clean install
+	
+Puis, Builder l'image Docker de notre application
+ 
+ 	sudo docker build --tag=stats:latest .
+ 
 
 #### Etape n°3: lancer l'application ####
 Une fois la construction terminée, rendez-vous dans le dossier `target` du module `lawn-mower-core`:

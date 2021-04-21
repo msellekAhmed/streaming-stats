@@ -1,0 +1,31 @@
+version: "2"
+services:
+  postgres:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: postgres
+    #volumes:
+    #- postgres-data:/var/lib/postgresql/data
+    expose:
+    - 5432
+    ports:
+    - 5432:5432
+    environment:
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_DB=postgres
+    restart: unless-stopped
+  # This is my rest api app*****************************************
+  stats:
+    image: stats:latest
+    network_mode: bridge
+    container_name: stats
+    expose:
+    - 8080
+    ports:
+    - 8080:8080
+    #volumes:
+    #- /home/ahmed/Document/stats:/var/tmp
+    restart: unless-stopped
+volumes:
+  postgres-data:

@@ -62,7 +62,7 @@ Modifier le application properties pour mettre l'adresse ip de votre machine au 
 
 	vim src/main/resources/application.properties
 	
-#### Etape n°3: Builder l'image Docker du Server pour etre sure de lancer a chanque fois la derniere version ####
+#### Etape n°3: Builder l'image Docker du Server pour etre sure de lancer a chanque fois la derniére version ####
 Lancez la construction de l'application via:
 
 	mvn clean install
@@ -73,7 +73,7 @@ Puis, Builder l'image Docker de notre application
  
 
 #### Etape n°3: lancer l'application Avec Docker compose ####
-Ici on va utiliser Dokcer compose afin de lancer multiple container docker, notamment un pour l'application stats et un autre por la postgres. La configuration necessaire a ceci est definis dans les fichier Dockerfile et docker-compose.yml du projet  :
+Ici on va utiliser Docker compose afin de lancer multiple container docker, notamment un pour l'application stats et un autre por la postgres. La configuration necessaire a ceci est definis dans les fichier Dockerfile et docker-compose.yml du projet  :
 
 	docker-compose up
 
@@ -94,10 +94,10 @@ L'application est découpée en couche selon la correspondance suivante:
 
 Couche                          | Description
 --------------------------------|---------------------------------------------------
-packages entity et repository   | la couche de persistence et d'accees a la donnee.
+packages entity et repository   | la couche de persistence et d'accées a la donnée.
 package service                 | contient la logique metier de l'application en terme d'aggreagation et calcul 
 package controller              | contient la couche d'exposition du web service REST.
 
 
 ### Tests ###
-un ensemble de tests unitaires a ete fait pour assurer le bon fonctionnement et la logiqe de l'application
+un ensemble de tests unitaires ont été réalisés pour assurer le bon fonctionnement et la logique de l'application
